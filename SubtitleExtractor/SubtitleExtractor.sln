@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32328.378
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SubtitleExtractor", "SubtitleExtractor\SubtitleExtractor.csproj", "{D2EE9542-4D10-4198-9386-882B9D713005}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D2EE9542-4D10-4198-9386-882B9D713005}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2EE9542-4D10-4198-9386-882B9D713005}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2EE9542-4D10-4198-9386-882B9D713005}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2EE9542-4D10-4198-9386-882B9D713005}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D33E2E80-2852-4926-946A-883570C6F2A7}
+	EndGlobalSection
+EndGlobal
