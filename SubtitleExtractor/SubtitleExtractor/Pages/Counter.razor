@@ -12,16 +12,13 @@
 <textarea rows=50 cols=100 @bind="MyTexts" />
 
 @code {
-    string[]? MyTexts = {"New lines"};
+    string? MyTexts = null;
 
     async Task extractSubtitle()
     {
         if (srtFile == null)
             return;
 
-        //MyText = new List<string>();
-
-        //var ms = new System.IO.MemoryStream(srtFile.Data);
         var sr = new System.IO.StreamReader(srtFile.DataStream);
 
         string? text = null;
@@ -35,7 +32,17 @@
             else
                 break;
         }
-        MyTexts = text_list.ToArray();
+
+        var tmp = text_list.Where(text => (text != "") && (text != null) && (int.TryParse(text, out _) == false) && (text.Contains("-->") == false) && (text.Substring(0,1) != "("));
+
+        MyTexts = "";
+        foreach(var st in tmp)
+        {
+            if (st.EndsWith(".") || st.EndsWith("!") || st.EndsWith("?"))
+                MyTexts += st + "\n";
+            else
+                MyTexts += st + " ";
+        }
     }
 
 
@@ -44,9 +51,6 @@
     void LoadSrtFile(InputFileChangeEventArgs e)
     {
         var loadedFiles = e.GetMultipleFiles(1);
-        //var buf = new byte[loadedFiles[0].Size];
-
-        //await loadedFiles[0].OpenReadStream().ReadAsync(buf);
 
         srtFile = new SrtFile()
             {
